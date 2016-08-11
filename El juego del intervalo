@@ -1,0 +1,58 @@
+#include <iostream>
+#include <stdio.h>
+#include <conio.h>
+
+int main(int argc, char** argv) {
+	system("color f2");
+	int a,b,c, edad, peso, cp=0, vecesj=0, p=0;
+	char r,r2, r3, sexo, nombre[20], tipo[2];
+	float por,x1,x2,y1,y2,compara1, compara2,yp,xp,indicador, indicadorf, nf, nj;
+	
+		/*el juego del intervalo*/
+	
+	do{
+		  
+	printf("\n\t\t\tBienvenido al juego del Intervalo\n");
+    printf("\nhay algun jugador que desee jugar\n ");
+    r=getch();
+    
+    while(r=='s' || r=='S'){
+    	do{
+    		printf("\nporfavor introdusca el primer intervalo, el mas pequeño\n");
+    		scanf("%f",&x1);
+    		printf("\nporfavor introdusca el segundo intervalo, el mas grande\n");
+    		scanf("%f",&x2);
+    		indicador=(x2-x1)/2;
+    		indicadorf=indicador+x1;
+    		printf("\nporfavor introdusca el numero que desee\n ");
+    		scanf("%f", &nj);
+    		nf=nj+indicadorf;
+    		printf("%2.f", nf);
+    		if(nf<x1 || nf>x2){
+    			printf("\nlo lamento has perdido, pero no te deprimas\n ");
+    			cp++;
+			}
+			else{
+				printf("\nfelicidades has ganado un juego ultrafacil\n ");
+			}
+			vecesj++;	
+			printf("\ndesea intentarlo otra vez (s)si o (n)no");
+			r2=getch();
+			
+		}while(r2=='s' || r2=='S');
+		por=(cp*100)/vecesj;
+		printf("\nel porcentaje de partidas perdidas es de %f", por);
+		break;
+	}
+	printf("\nel juego tuvo mucho exito lo promociono otro vez (s)si o (n)no");
+	r3=getch();
+	nf=0;
+	cp=0;
+	vecesj=0;
+	por=0;
+	x1=0;
+	x2=0;
+	system("cls");
+	}while(r3=='s' || r3=='S');
+	
+ 
