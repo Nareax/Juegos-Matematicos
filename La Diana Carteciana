@@ -1,0 +1,84 @@
+#include <iostream>
+#include <stdio.h>
+#include <conio.h>
+
+int main(int argc, char** argv) {
+	system("color f2");
+	int a,b,c, edad, peso, cp=0, vecesj=0, p=0;
+	char r,r2, r3, sexo, nombre[20], tipo[2];
+	float por,x1,x2,y1,y2,compara1, compara2,yp,xp,indicador, indicadorf, nf, nj;
+	
+		/*la diana carteciana*/
+	
+	do{
+		
+	printf("\n\t\t\tBienvenido a la diana carteciana\n");
+	printf("\nhay algun jugador que desee jugar\n ");
+    r=getch();
+    
+    if(r=='s' || r=='S'){
+    do{
+    	printf("\nporfavor introdusca su primera coordenada en x, para la creacion del cuadrado\n");
+    	scanf("%f",&x1);
+    	printf("\nporfavor introdusca su segunda coordenada en x, para la creacion del cuadrado\n");
+    	scanf("%f",&x2);
+    	printf("\nporfavor introdusca su primera coordenada en y, para la creacion del cuadrado\n");
+    	scanf("%f",&y1);
+    	printf("\nporfavor introdusca su segunda coordenada en y, para la creacion del cuadrado\n");
+    	scanf("%f",&y2);
+    	if(x2<0){
+    		compara1=x2*-1;
+		}
+    	if(y2<0){
+    		compara2=y2*-1;
+		}
+    	
+    	if(x1==x2 || x1==compara1){
+    		printf("\nlos valores de las x estan bien\n");
+    		if(y1==y2 || y1==compara2){
+    			printf("\nlos valores de las y estan bien\n");
+    			if((y1==x1 && y2==x1 && y2==x2 && y1==x2) || (y1==x1 && compara2==x1 && compara2==compara1 && y1==compara1)){
+    				printf("\nlos valores son aceptados, es un cuadrado\n");
+    				p=1;
+				}
+				else{
+					printf("\nes un rectangulo no un cuadrado, no sirve\n");
+				}
+    			
+			}
+			else{
+				printf("\ncon estas coordenadas jamas sera un cuadrado\n");
+			}
+		}
+		else{
+			printf("\ncon estas coordenadas jamas sera un cuadrado\n");
+		}
+    	
+		}while(p<=0);
+		
+	printf("\nporfavor introdusca su primer cordenada en x\n");
+	scanf("%f",&xp);
+	printf("\nporfavor introdusca su segunda cordenada en y\n");
+	scanf("%f",&yp);
+	
+	if((xp>=x2 && xp<=x1) && (yp>=y2 && yp<=y1)){
+		printf("\nfelicidades diste dentro de la diana, estas en camino en \nvolverte un experto tirador\n");
+	}
+	else{
+		printf("\nlo lamento diste fuera de la diana y le diste a un arbol, eres muy malo en esto\n");
+	}
+
+	}
+	else{
+		printf("\nhay poca clientela hoy\n");
+	}
+	
+	printf("\ncontinuo promocionando mi juego (s)si (n)no");
+	r3=getch();
+	system("cls");
+	
+	}while(r3=='s' || r3=='S');
+	
+	
+	return 0;
+}
