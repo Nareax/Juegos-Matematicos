@@ -54,5 +54,6 @@ int main(int argc, char** argv) {
 	x2=0;
 	system("cls");
 	}while(r3=='s' || r3=='S');
-	
+        return 0;
+}
  
